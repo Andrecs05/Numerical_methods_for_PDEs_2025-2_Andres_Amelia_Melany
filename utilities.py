@@ -3,6 +3,13 @@ import matplotlib.pyplot as plt
 import sympy as sp
 
 def Lagrange_interpolation_3(p0, p1, p2):
+    """
+    Perform Lagrange interpolation for three points.
+        Args: 
+            p0, p1, p2: tuples of the form (x, b) where x is the x-coordinate and b is the y-coordinate.
+        Returns:
+            A sympy expression representing the Lagrange polynomial.
+    """
     x0 = p0[0]
     x1 = p1[0]
     x2 = p2[0]
