@@ -8,9 +8,8 @@ Para finales del año 2025 contará con cuatro carpetas:
 - **Miniproyecto 1**
 - **Miniproyecto 2**
 - **Miniproyecto 3**
-- **Numerical Metods**
 
-Cada carpeta tendrá un documento explicando cada uno de los puntos y el código correspondiente con el que se solucionaron, excepto la carpeta de **Numerical Methods** que contendrá la implementación de los métodos numéricos vistos en clase que se usarán en los miniproyectos. 
+Cada carpeta tendrá un documento explicando cada uno de los puntos y el código correspondiente con el que se solucionaron.
 
 La estructura de este proyecto se está gestionando con `uv` y contiene los siguientes archivos estructurales:
 
