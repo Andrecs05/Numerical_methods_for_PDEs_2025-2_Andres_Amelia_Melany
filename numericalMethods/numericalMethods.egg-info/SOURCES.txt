@@ -1,5 +1,0 @@
-setup.py
-numericalMethods.egg-info/PKG-INFO
-numericalMethods.egg-info/SOURCES.txt
-numericalMethods.egg-info/dependency_links.txt
-numericalMethods.egg-info/top_level.txt

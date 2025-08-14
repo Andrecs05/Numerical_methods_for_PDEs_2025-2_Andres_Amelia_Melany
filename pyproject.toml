@@ -8,3 +8,8 @@ dependencies = [
     "matplotlib>=3.10.5",
     "sympy>=1.14.0",
 ]
+
+
+[tool.uv.dependencies]
+numericalMethods = { path = "./numericalMethods", develop = true }
+
