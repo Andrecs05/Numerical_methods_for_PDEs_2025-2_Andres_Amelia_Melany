@@ -1,6 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
+from numericalMethods import interpolation
+
+# Test interpolation function
+points = [(0, 1), (1, 2), (2, 0)]
+interpolation(points)
 
 def Lagrange_interpolation_3(p0, p1, p2):
     """
