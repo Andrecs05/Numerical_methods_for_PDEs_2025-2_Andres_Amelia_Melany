@@ -1,9 +1,5 @@
 import sympy as sp
 
-def hello():
-    print("Hello, world!")
-    return "Hello, world!"
-
 def lagrange_interpolation(points):
     """
     Perform Lagrange interpolation for three points.
