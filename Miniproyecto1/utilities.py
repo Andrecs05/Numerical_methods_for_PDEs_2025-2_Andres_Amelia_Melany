@@ -15,9 +15,9 @@ def plot_points(points):
     x_vals, y_vals = zip(*points)
     plt.figure(figsize=(8, 10))
     plt.scatter(x_vals, y_vals, color='blue', marker='o')  # scatter instead of plot
-    plt.title('Swapped and Sorted Points Plot')
-    plt.xlabel('Original Y Coordinate (Now X)')
-    plt.ylabel('Original X Coordinate (Now Y)')
+    plt.title('Puntos chocolatera')
+    plt.xlabel('X (Cm)')
+    plt.ylabel('Y (Cm)')
     plt.grid(True)
     plt.axis('equal')
     plt.show()
