@@ -95,3 +95,30 @@ def plot_function(func_dict, same_plot=True):
 
         plt.tight_layout()
         plt.show()
+
+def plot_exponential_decay_stability(approx_list, exact_solution, T, method):
+
+    n = len(approx_list)
+
+    exact_steps = len(exact_solution)
+    x_values_exact = np.linspace(0, T, exact_steps)
+
+    fig, axes = plt.subplots(1, n, figsize=(6 * n, 5), squeeze=False)
+    axes = axes[0]
+
+    for i, solution in enumerate(approx_list):
+        ax = axes[i]
+        
+        steps = len(solution)
+        x_values = np.linspace(0, T, steps)
+
+        ax.plot(x_values, solution, label='Approximate Solution ' f'dt = {T / (steps - 1):.2f}')
+        ax.plot(x_values_exact, exact_solution, label='Exact Solution', linestyle='--')
+        ax.set_xlabel('t')
+        ax.set_ylabel('u(t)')
+        ax.set_title(method)
+        ax.legend()
+        ax.grid(True)
+
+    plt.tight_layout()
+    plt.show()
