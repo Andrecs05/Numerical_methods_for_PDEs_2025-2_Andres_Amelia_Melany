@@ -24,7 +24,7 @@ def lagrange_interpolation(points):
 
     return sp.simplify(poly)
 
-def piecewise_interpolation(points, pts_per_interval):
+def piecewise_lagrange_interpolation(points, pts_per_interval):
     """
     Perform piecewise Lagrange interpolation on subintervals defined by the given points.
 
@@ -85,7 +85,7 @@ def test_lagrange_interpolation():
 
     # Test piecewise interpolation
     n = 3
-    piecewise_poly = piecewise_interpolation(points, n)
+    piecewise_poly = piecewise_lagrange_interpolation(points, n)
     print(f"\nPiecewise Lagrange Polynomial ({n} points per interval): {piecewise_poly}")
 
     # Graph the interpolation

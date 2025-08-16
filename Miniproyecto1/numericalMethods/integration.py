@@ -178,9 +178,8 @@ def revolution_solid_volume(expr, lower_bound, upper_bound, integration_method, 
     Returns:
         float: The approximate volume of the solid of revolution.
     """
-    x = sp.symbols('x')
     # Volume of revolution formula: V = π * ∫[a, b] (f(x))^2 dx
-    volume_expr = sp.pi * expr**2
+    volume_expr = sp.pi * expr**2  # symbolic square works
     return integration_method(volume_expr, lower_bound, upper_bound, n).evalf()
 
 def graph_revolution_solid(expr, lower_bound, upper_bound, num_x=100, num_theta=50):
@@ -301,4 +300,6 @@ if __name__ == "__main__":
     test_function = 2 + sp.sin(x)
     print("Volume:", revolution_solid_volume(test_function, 0, 2 * sp.pi, simpson_rule, 100))
     graph_revolution_solid(test_function, 0, 2 * sp.pi)
+
+    print(type(test_function))
 

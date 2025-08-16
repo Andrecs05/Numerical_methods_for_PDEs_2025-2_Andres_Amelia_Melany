@@ -6,10 +6,6 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "matplotlib>=3.10.5",
+    "pandas>=2.3.1",
     "sympy>=1.14.0",
 ]
-
-
-[tool.uv.dependencies]
-numericalMethods = { path = "./numericalMethods", develop = true }
-
