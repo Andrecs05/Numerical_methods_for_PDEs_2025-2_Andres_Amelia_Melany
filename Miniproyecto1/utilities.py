@@ -22,7 +22,7 @@ def plot_points(points):
     plt.axis('equal')
     plt.show()
 
-def plot_function(func_dict, same_plot=True):
+def plot_function_expresion(func_dict, same_plot=True):
     """
     Plots functions from a dictionary of the form:
     {
@@ -65,6 +65,32 @@ def plot_function(func_dict, same_plot=True):
             ax.set_xlabel('X')
             ax.set_ylabel('Y')
             ax.grid(True)
+            ax.legend()
+
+        plt.tight_layout()
+        plt.show()
+
+def plot_function(func_dict, same_plot=True):
+    if same_plot:
+        plt.figure(figsize=(10, 6))
+        for name, (t, u) in func_dict.items():
+            plt.plot(t, u, label=name)
+
+        plt.xlabel("t")
+        plt.ylabel("u(t)")
+        plt.legend()
+        plt.title("Exponential Decay: Numerical Schemes")
+        plt.show()
+    else:
+        num_funcs = len(func_dict)
+        fig, axes = plt.subplots(1, num_funcs, figsize=(6 * num_funcs, 5), squeeze=False)
+        axes = axes[0]  # Get the 1D array of axes
+
+        for ax, (name, (t, u)) in zip(axes, func_dict.items()):
+            ax.plot(t, u, label=name)
+            ax.set_xlabel("t")
+            ax.set_ylabel("u(t)")
+            ax.set_title(f"Exponential Decay: {name}")
             ax.legend()
 
         plt.tight_layout()
