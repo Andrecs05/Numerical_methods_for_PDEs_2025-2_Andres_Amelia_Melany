@@ -4,12 +4,12 @@
 
 Este repositorio es el hogar de los tres miniproyectos realizados durante el curso de *Métodos Numéricos* en el semestre *2025-2*.
 
-Para finales del año 2025 contará con cuatro carpetas:
+Para finales del año 2025 contará con tres carpetas:
 - **Miniproyecto 1**
 - **Miniproyecto 2**
 - **Miniproyecto 3**
 
-Cada carpeta tendrá un documento explicando cada uno de los puntos y el código correspondiente con el que se solucionaron.
+Cada carpeta tendrá un notebook de Jupyter explicando cada uno de los puntos y el código correspondiente con el que se solucionaron.
 
 La estructura de este proyecto se está gestionando con `uv` y contiene los siguientes archivos estructurales:
 
