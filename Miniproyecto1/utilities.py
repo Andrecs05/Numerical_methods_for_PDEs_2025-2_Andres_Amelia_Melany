@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sp
 
+
 def read_interpolation_points(file_path):
     points = []
     with open(file_path, 'r') as f:
@@ -20,10 +21,6 @@ def plot_points(points):
     plt.grid(True)
     plt.axis('equal')
     plt.show()
-
-import sympy as sp
-import numpy as np
-import matplotlib.pyplot as plt
 
 def plot_function(func_dict, same_plot=True):
     """
