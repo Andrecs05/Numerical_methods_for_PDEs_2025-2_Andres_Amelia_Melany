@@ -108,7 +108,7 @@ def plot_exponential_decay_stability(approx_list, exact_solution, T, method):
 
     for i, solution in enumerate(approx_list):
         ax = axes[i]
-        
+
         steps = len(solution)
         x_values = np.linspace(0, T, steps)
 
@@ -119,6 +119,36 @@ def plot_exponential_decay_stability(approx_list, exact_solution, T, method):
         ax.set_title(method)
         ax.legend()
         ax.grid(True)
+
+    plt.tight_layout()
+    plt.show()
+
+def plot_log_dt_log_E(dt_values, E_values, methods):
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+
+    log_dt = np.log(dt_values)
+    log_E = {method: np.log(E_values[method]) for method in methods}
+
+    # Mask for linear zone: log(dt) < -2
+    mask = log_dt < -1.5
+
+    slopes = {}
+    for ax, method in zip(axes, methods):
+        x = log_dt[mask]
+        y = log_E[method][mask]
+        # Linear fit for the linear zone
+        slope = np.polyfit(x, y, 1)[0]
+        slopes[method] = slope
+
+        ax.plot(log_dt, log_E[method], label=f'{method} (slope = {slope:.2f})')
+        ax.set_title(f'Log-Log Plot: {method}')
+        ax.set_xlabel('Log(dt)')
+        ax.set_ylabel('Log(Error)')
+        ax.grid(True)
+        ax.legend()
+
+        # Highlight the linear zone
+        ax.axvspan(log_dt[mask][0], log_dt[mask][-1], color='yellow', alpha=0.2)
 
     plt.tight_layout()
     plt.show()

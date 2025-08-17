@@ -36,3 +36,9 @@ def exact_solution(u0, a, h, T):
     steps = int(T / h)
     t = np.linspace(0, steps*h, steps+1)
     return u0 * np.exp(-a*t)
+
+def compute_error_E(numerical_solution, exact_solution, dt):
+    e = exact_solution - numerical_solution
+    E = np.sqrt(np.sum(e**2) * dt)
+    return E
+    
