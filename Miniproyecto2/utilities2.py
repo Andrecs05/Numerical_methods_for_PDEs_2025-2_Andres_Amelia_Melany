@@ -40,3 +40,35 @@ def plot_solution(V , n_x_nodes, n_y_nodes, X, Y):
     plt.ylabel('y')
     plt.title('2D Potential Distribution')
     plt.show()
+
+import numpy as np
+
+def print_matrix(A, max_rows=10, max_cols=10):
+    """
+    Pretty-print the coefficient matrix A.
+    Shows only the top-left corner if the matrix is large.
+    
+    Parameters:
+        A (np.ndarray): The matrix to print.
+        max_rows (int): Maximum number of rows to display.
+        max_cols (int): Maximum number of columns to display.
+    """
+    rows, cols = A.shape
+    print(f"Matrix shape: {rows} x {cols}\n")
+    
+    # Determine how much to show
+    r = min(rows, max_rows)
+    c = min(cols, max_cols)
+    
+    # Slice the top-left block
+    submatrix = A[:r, :c]
+    
+    # Print with formatting
+    for i in range(r):
+        row_str = " ".join(f"{val:6.1f}" for val in submatrix[i])
+        if c < cols:
+            row_str += "  ..."
+        print(row_str)
+    
+    if r < rows:
+        print("...")
